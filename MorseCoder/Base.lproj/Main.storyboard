@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pKi-rG-pNb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Morse Code Trainer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PracticeViewController" customModule="MorseCoder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4M-yT-unL">
+                                <rect key="frame" x="16" y="91" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To enable the morse code keyboard, go to Settings -&gt; General -&gt; keyboard -&gt; keyboards -&gt; Add New Keyboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p40-Sj-wB9">
+                                <rect key="frame" x="16" y="10" width="343" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="MorseChart" translatesAutoresizingMaskIntoConstraints="NO" id="JmL-4y-KnY">
+                                <rect key="frame" x="16" y="126" width="343" height="277"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JmL-4y-KnY" firstAttribute="leading" secondItem="p40-Sj-wB9" secondAttribute="leading" id="6fh-ZF-nhb"/>
+                            <constraint firstItem="C4M-yT-unL" firstAttribute="leading" secondItem="p40-Sj-wB9" secondAttribute="leading" id="K4c-P7-uoD"/>
+                            <constraint firstItem="JmL-4y-KnY" firstAttribute="trailing" secondItem="p40-Sj-wB9" secondAttribute="trailing" id="Q31-Ki-YCO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p40-Sj-wB9" secondAttribute="trailing" constant="16" id="VEq-XN-xwg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JmL-4y-KnY" secondAttribute="bottom" constant="200" id="fhl-9k-msu"/>
+                            <constraint firstItem="C4M-yT-unL" firstAttribute="top" secondItem="p40-Sj-wB9" secondAttribute="bottom" constant="20" id="h3i-mf-ehh"/>
+                            <constraint firstItem="p40-Sj-wB9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mFp-Y5-U1V"/>
+                            <constraint firstItem="p40-Sj-wB9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qzD-yG-pvJ"/>
+                            <constraint firstItem="JmL-4y-KnY" firstAttribute="top" secondItem="C4M-yT-unL" secondAttribute="bottom" constant="5" id="vYy-hy-dPd"/>
+                            <constraint firstItem="C4M-yT-unL" firstAttribute="trailing" secondItem="p40-Sj-wB9" secondAttribute="trailing" id="zNd-fe-0cG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Morse Code Trainer" id="5a6-aN-8GY"/>
+                    <connections>
+                        <outlet property="instructionsLabelTopConstraint" destination="mFp-Y5-U1V" id="zV3-3A-WDV"/>
+                        <outlet property="morseChartBottomConstraint" destination="fhl-9k-msu" id="exZ-tQ-9XC"/>
+                        <outlet property="textField" destination="C4M-yT-unL" id="MR4-8e-8bd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.80000000000001" y="32.833583208395808"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cj4-yE-n1n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pKi-rG-pNb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Rzu-UC-mbu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.26815941671898552" green="0.85954415798187256" blue="0.612104162840446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LMu-j2-4PZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFV-lw-Ttt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="33"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MorseChart" width="600" height="551"/>
+    </resources>
+</document>
