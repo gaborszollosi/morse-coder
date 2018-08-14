@@ -17,7 +17,39 @@
 		04512C662015530F0022BDCD /* MorseColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C642015530F0022BDCD /* MorseColors.swift */; };
 		04512C672015530F0022BDCD /* MorseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C652015530F0022BDCD /* MorseData.swift */; };
 		18E28E23207409CB00F3841C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E28E22207409CB00F3841C /* LaunchScreen.storyboard */; };
+		DD8A0B002123428E00549776 /* MorseColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C642015530F0022BDCD /* MorseColors.swift */; };
+		DD8A0B012123428E00549776 /* MorseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C652015530F0022BDCD /* MorseData.swift */; };
+		DD8A0B022123428E00549776 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C5D201553090022BDCD /* KeyboardButton.swift */; };
+		DD8A0B032123428E00549776 /* MorseKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512C5E201553090022BDCD /* MorseKeyboardView.swift */; };
+		DD8A0B042123428E00549776 /* MorseKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04512C5F201553090022BDCD /* MorseKeyboardView.xib */; };
+		DD8A0B052123428E00549776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04512C47201545290022BDCD /* Assets.xcassets */; };
+		DDFA15732122096E002B7C89 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA15722122096E002B7C89 /* KeyboardViewController.swift */; };
+		DDFA15772122096E002B7C89 /* MorseKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DDFA15702122096E002B7C89 /* MorseKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDFA15752122096E002B7C89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04512C35201545290022BDCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFA156F2122096E002B7C89;
+			remoteInfo = MorseKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDFA157B2122096E002B7C89 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DDFA15772122096E002B7C89 /* MorseKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		04512C3D201545290022BDCD /* MorseCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +64,20 @@
 		04512C642015530F0022BDCD /* MorseColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorseColors.swift; sourceTree = "<group>"; };
 		04512C652015530F0022BDCD /* MorseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorseData.swift; sourceTree = "<group>"; };
 		18E28E22207409CB00F3841C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDFA15702122096E002B7C89 /* MorseKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MorseKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFA15722122096E002B7C89 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		DDFA15742122096E002B7C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		04512C3A201545290022BDCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFA156D2122096E002B7C89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				04512C3F201545290022BDCD /* MorseCoder */,
+				DDFA15712122096E002B7C89 /* MorseKeyboard */,
 				04512C3E201545290022BDCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				04512C3D201545290022BDCD /* MorseCoder.app */,
+				DDFA15702122096E002B7C89 /* MorseKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +139,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DDFA15712122096E002B7C89 /* MorseKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA15722122096E002B7C89 /* KeyboardViewController.swift */,
+				DDFA15742122096E002B7C89 /* Info.plist */,
+			);
+			path = MorseKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,15 +158,34 @@
 				04512C39201545290022BDCD /* Sources */,
 				04512C3A201545290022BDCD /* Frameworks */,
 				04512C3B201545290022BDCD /* Resources */,
+				DDFA157B2122096E002B7C89 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DDFA15762122096E002B7C89 /* PBXTargetDependency */,
 			);
 			name = MorseCoder;
 			productName = MorseCoder;
 			productReference = 04512C3D201545290022BDCD /* MorseCoder.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DDFA156F2122096E002B7C89 /* MorseKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFA157A2122096E002B7C89 /* Build configuration list for PBXNativeTarget "MorseKeyboard" */;
+			buildPhases = (
+				DDFA156C2122096E002B7C89 /* Sources */,
+				DDFA156D2122096E002B7C89 /* Frameworks */,
+				DDFA156E2122096E002B7C89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MorseKeyboard;
+			productName = MorseKeyboard;
+			productReference = DDFA15702122096E002B7C89 /* MorseKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -121,12 +193,16 @@
 		04512C35201545290022BDCD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = razeware;
 				TargetAttributes = {
 					04512C3C201545290022BDCD = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DDFA156F2122096E002B7C89 = {
+						CreatedOnToolsVersion = 9.4.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				04512C3C201545290022BDCD /* MorseCoder */,
+				DDFA156F2122096E002B7C89 /* MorseKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -158,6 +235,15 @@
 				18E28E23207409CB00F3841C /* LaunchScreen.storyboard in Resources */,
 				04512C48201545290022BDCD /* Assets.xcassets in Resources */,
 				04512C46201545290022BDCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFA156E2122096E002B7C89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD8A0B052123428E00549776 /* Assets.xcassets in Resources */,
+				DD8A0B042123428E00549776 /* MorseKeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +263,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDFA156C2122096E002B7C89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD8A0B032123428E00549776 /* MorseKeyboardView.swift in Sources */,
+				DD8A0B022123428E00549776 /* KeyboardButton.swift in Sources */,
+				DD8A0B002123428E00549776 /* MorseColors.swift in Sources */,
+				DDFA15732122096E002B7C89 /* KeyboardViewController.swift in Sources */,
+				DD8A0B012123428E00549776 /* MorseData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFA15762122096E002B7C89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFA156F2122096E002B7C89 /* MorseKeyboard */;
+			targetProxy = DDFA15752122096E002B7C89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04512C44201545290022BDCD /* Main.storyboard */ = {
@@ -305,6 +411,7 @@
 		04512C50201545290022BDCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MorseCoder/Info.plist;
@@ -319,12 +426,45 @@
 		04512C51201545290022BDCD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MorseCoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MorseCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDFA15782122096E002B7C89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MorseKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MorseCoder.MorseKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDFA15792122096E002B7C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MorseKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.MorseCoder.MorseKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -347,6 +487,15 @@
 			buildConfigurations = (
 				04512C50201545290022BDCD /* Debug */,
 				04512C51201545290022BDCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFA157A2122096E002B7C89 /* Build configuration list for PBXNativeTarget "MorseKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFA15782122096E002B7C89 /* Debug */,
+				DDFA15792122096E002B7C89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
