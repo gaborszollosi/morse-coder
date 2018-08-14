@@ -31,6 +31,21 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     
     var morseKeyboardView: MorseKeyboardView!
+    var userLexicon: UILexicon?
+    
+    var currentWord: String? {
+        var lastWord: String?
+    
+        if let stringBeforeCursor = textDocumentProxy.documentContextBeforeInput {
+    
+            stringBeforeCursor.enumerateSubstrings(in: stringBeforeCursor.startIndex..., options: .byWords) { word, _, _, _ in
+                if let word = word {
+                    lastWord = word
+                }
+            }
+        }
+        return lastWord
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +68,24 @@ class KeyboardViewController: UIInputViewController {
         
         morseKeyboardView.setNextKeyboardVisible(needsInputModeSwitchKey)
         
-        morseKeyboardView.nextKeyboardButton.addTarget(self,
-                                                       action: #selector(handleInputModeList(from:with:)),
-                                                       for: .allTouchEvents)
+        morseKeyboardView.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+        
+        requestSupplementaryLexicon { lexicon in
+            self.userLexicon = lexicon
+        }
+    }
+    
+    override func textDidChange(_ textInput: UITextInput?) {
+        
+        let colorScheme: MorseColorScheme
+        
+        if textDocumentProxy.keyboardAppearance == .dark {
+            colorScheme = .dark
+        } else {
+            colorScheme = .light
+        }
+        
+        morseKeyboardView.setColorScheme(colorScheme)
     }
 
 }
@@ -63,6 +93,9 @@ class KeyboardViewController: UIInputViewController {
 // MARK: - MorseKeyboardViewDelegate
 extension KeyboardViewController: MorseKeyboardViewDelegate {
     func insertCharacter(_ newCharacter: String) {
+        if newCharacter == " " {
+            attemptToReplaceCurrentWord()
+        }
         textDocumentProxy.insertText(newCharacter)
     }
     
@@ -77,5 +110,26 @@ extension KeyboardViewController: MorseKeyboardViewDelegate {
         }
         
         return String(character)
+    }
+}
+
+// MARK: - Private methods
+private extension KeyboardViewController {
+    func attemptToReplaceCurrentWord() {
+        
+        guard let entries = userLexicon?.entries,
+            let currentWord = currentWord?.lowercased() else { return }
+        
+        let replacementEntries = entries.filter {
+            $0.userInput.lowercased() == currentWord
+        }
+        
+        if let replacement = replacementEntries.first {
+            for _ in 0..<currentWord.count {
+                textDocumentProxy.deleteBackward()
+            }
+            
+            textDocumentProxy.insertText(replacement.documentText)
+        }
     }
 }
