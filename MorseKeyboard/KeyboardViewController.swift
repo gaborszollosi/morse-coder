@@ -41,6 +41,8 @@ class KeyboardViewController: UIInputViewController {
         guard let inputView = inputView else { return }
         inputView.addSubview(morseKeyboardView)
         
+        morseKeyboardView.delegate = self
+        
         morseKeyboardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             morseKeyboardView.leftAnchor.constraint(equalTo: inputView.leftAnchor),
@@ -50,6 +52,30 @@ class KeyboardViewController: UIInputViewController {
             ])
         
         morseKeyboardView.setNextKeyboardVisible(needsInputModeSwitchKey)
+        
+        morseKeyboardView.nextKeyboardButton.addTarget(self,
+                                                       action: #selector(handleInputModeList(from:with:)),
+                                                       for: .allTouchEvents)
     }
 
+}
+
+// MARK: - MorseKeyboardViewDelegate
+extension KeyboardViewController: MorseKeyboardViewDelegate {
+    func insertCharacter(_ newCharacter: String) {
+        textDocumentProxy.insertText(newCharacter)
+    }
+    
+    func deleteCharacterBeforeCursor() {
+        textDocumentProxy.deleteBackward()
+    }
+    
+    func characterBeforeCursor() -> String? {
+        
+        guard let character = textDocumentProxy.documentContextBeforeInput?.last else {
+            return nil
+        }
+        
+        return String(character)
+    }
 }
